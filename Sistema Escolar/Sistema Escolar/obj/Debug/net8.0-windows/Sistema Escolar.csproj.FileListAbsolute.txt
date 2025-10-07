@@ -1,0 +1,26 @@
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\bin\Debug\net8.0-windows\Sistema Escolar.exe
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\bin\Debug\net8.0-windows\Sistema Escolar.deps.json
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\bin\Debug\net8.0-windows\Sistema Escolar.runtimeconfig.json
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\bin\Debug\net8.0-windows\Sistema Escolar.dll
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\bin\Debug\net8.0-windows\Sistema Escolar.pdb
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\obj\Debug\net8.0-windows\Sistema_Escolar.Academico.resources
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\obj\Debug\net8.0-windows\Sistema_Escolar.Alumno.resources
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\obj\Debug\net8.0-windows\Sistema_Escolar.Aula.resources
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\obj\Debug\net8.0-windows\Sistema_Escolar.Carrera.resources
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\obj\Debug\net8.0-windows\Sistema_Escolar.Ciudad.resources
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\obj\Debug\net8.0-windows\Sistema_Escolar.Estado.resources
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\obj\Debug\net8.0-windows\Sistema_Escolar.Estatus.resources
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\obj\Debug\net8.0-windows\Sistema_Escolar.Materia.resources
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\obj\Debug\net8.0-windows\Sistema_Escolar.Pais.resources
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\obj\Debug\net8.0-windows\Sistema_Escolar.VentanaPrincipal.resources
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\obj\Debug\net8.0-windows\Sistema Escolar.csproj.GenerateResource.cache
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\obj\Debug\net8.0-windows\Sistema Escolar.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\obj\Debug\net8.0-windows\Sistema Escolar.AssemblyInfoInputs.cache
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\obj\Debug\net8.0-windows\Sistema Escolar.AssemblyInfo.cs
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\obj\Debug\net8.0-windows\Sistema Escolar.csproj.CoreCompileInputs.cache
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\obj\Debug\net8.0-windows\Sistema Escolar.sourcelink.json
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\obj\Debug\net8.0-windows\Sistema Escolar.dll
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\obj\Debug\net8.0-windows\refint\Sistema Escolar.dll
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\obj\Debug\net8.0-windows\Sistema Escolar.pdb
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\obj\Debug\net8.0-windows\Sistema Escolar.genruntimeconfig.cache
+C:\Users\gaelg\OneDrive\Documentos\GitHub\base-de-datos\Sistema Escolar\Sistema Escolar\obj\Debug\net8.0-windows\ref\Sistema Escolar.dll

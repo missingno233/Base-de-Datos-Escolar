@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Sistema Escolar")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e902857043f3f7ca3cad25d1456feefeafc7454e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Sistema Escolar")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Sistema Escolar")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
