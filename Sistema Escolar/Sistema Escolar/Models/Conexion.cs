@@ -22,29 +22,48 @@ namespace Sistema_Escolar.Models
             this.conexion = conexion;
         }
         
-        public void obtenerDatos()
+        public bool ProbarConexion()
         {
             try
             {
-                DataTable dt = new DataTable();
-
-
                 using (SqlConnection conexion = new SqlConnection(this.conexion))
                 {
                     conexion.Open();
+                    return true;
                 }
-
-
-
             }
             catch (Exception ex)
             {
 
+                MessageBox.Show($"Error al conectar. {ex.Message}");
+                return false;
+            }
+        }
+
+
+        public void ObtenerDatos(String consulta)
+        {
+            try
+            {
+                DataTable tabllita = new DataTable();
+
+
+                using (SqlCommand comandito = new SqlCommand(consulta, this.conexion))
+                {
+                    using (SqlDataAdapter adaptador = new SqlDataAdapter(consulta))
+                    {
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show($"Error. {ex.Message}");
             }
         }
-    
-    
-    
+
+
+
     }
 }
