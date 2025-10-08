@@ -34,10 +34,13 @@
             TSBEliminar = new ToolStripButton();
             TSBInsertar = new ToolStripButton();
             TSBEditar = new ToolStripButton();
-            cbPiso = new ComboBox();
-            txtAula = new TextBox();
-            txtEdificio = new TextBox();
-            cbCapacidad = new ComboBox();
+            txtApellidos = new TextBox();
+            txtNombre = new TextBox();
+            cbGrado = new ComboBox();
+            label1 = new Label();
+            txtEliminar = new TextBox();
+            label2 = new Label();
+            btnEliminar = new Button();
             ((System.ComponentModel.ISupportInitialize)DGVDatos).BeginInit();
             toolStrip1.SuspendLayout();
             SuspendLayout();
@@ -76,6 +79,7 @@
             TSBEliminar.Name = "TSBEliminar";
             TSBEliminar.Size = new Size(54, 22);
             TSBEliminar.Text = "Eliminar";
+            TSBEliminar.Click += TSBEliminar_Click;
             // 
             // TSBInsertar
             // 
@@ -84,6 +88,7 @@
             TSBInsertar.Name = "TSBInsertar";
             TSBInsertar.Size = new Size(50, 22);
             TSBInsertar.Text = "Insertar";
+            TSBInsertar.Click += TSBInsertar_Click;
             // 
             // TSBEditar
             // 
@@ -93,49 +98,78 @@
             TSBEditar.Size = new Size(41, 22);
             TSBEditar.Text = "Editar";
             // 
-            // cbPiso
+            // txtApellidos
             // 
-            cbPiso.FormattingEnabled = true;
-            cbPiso.Items.AddRange(new object[] { "1er piso", "2do piso", "3er piso" });
-            cbPiso.Location = new Point(175, 348);
-            cbPiso.Name = "cbPiso";
-            cbPiso.Size = new Size(94, 23);
-            cbPiso.TabIndex = 11;
+            txtApellidos.Location = new Point(24, 348);
+            txtApellidos.Name = "txtApellidos";
+            txtApellidos.PlaceholderText = "Apellidos";
+            txtApellidos.Size = new Size(136, 23);
+            txtApellidos.TabIndex = 10;
             // 
-            // txtAula
+            // txtNombre
             // 
-            txtAula.Location = new Point(24, 348);
-            txtAula.Name = "txtAula";
-            txtAula.PlaceholderText = "Aula";
-            txtAula.Size = new Size(136, 23);
-            txtAula.TabIndex = 10;
+            txtNombre.Location = new Point(24, 319);
+            txtNombre.Name = "txtNombre";
+            txtNombre.PlaceholderText = "Nombre";
+            txtNombre.Size = new Size(136, 23);
+            txtNombre.TabIndex = 9;
             // 
-            // txtEdificio
+            // cbGrado
             // 
-            txtEdificio.Location = new Point(24, 319);
-            txtEdificio.Name = "txtEdificio";
-            txtEdificio.PlaceholderText = "Edificio";
-            txtEdificio.Size = new Size(136, 23);
-            txtEdificio.TabIndex = 9;
+            cbGrado.FormattingEnabled = true;
+            cbGrado.Items.AddRange(new object[] { "Primaria", "Secundaria", "Prepraratoria", "Universidad" });
+            cbGrado.Location = new Point(175, 348);
+            cbGrado.Name = "cbGrado";
+            cbGrado.Size = new Size(94, 23);
+            cbGrado.TabIndex = 12;
             // 
-            // cbCapacidad
+            // label1
             // 
-            cbCapacidad.FormattingEnabled = true;
-            cbCapacidad.Items.AddRange(new object[] { "30 alumnos", "40 alumnos", "50 alumnos" });
-            cbCapacidad.Location = new Point(175, 319);
-            cbCapacidad.Name = "cbCapacidad";
-            cbCapacidad.Size = new Size(94, 23);
-            cbCapacidad.TabIndex = 12;
+            label1.AutoSize = true;
+            label1.Location = new Point(175, 322);
+            label1.Name = "label1";
+            label1.Size = new Size(42, 15);
+            label1.TabIndex = 13;
+            label1.Text = "Grado:";
+            // 
+            // txtEliminar
+            // 
+            txtEliminar.Location = new Point(403, 314);
+            txtEliminar.Name = "txtEliminar";
+            txtEliminar.Size = new Size(100, 23);
+            txtEliminar.TabIndex = 14;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(379, 317);
+            label2.Name = "label2";
+            label2.Size = new Size(18, 15);
+            label2.TabIndex = 15;
+            label2.Text = "ID";
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Location = new Point(415, 348);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(75, 23);
+            btnEliminar.TabIndex = 16;
+            btnEliminar.Text = "¡Eliminalo!";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // Academico
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(515, 378);
-            Controls.Add(cbCapacidad);
-            Controls.Add(cbPiso);
-            Controls.Add(txtAula);
-            Controls.Add(txtEdificio);
+            Controls.Add(btnEliminar);
+            Controls.Add(label2);
+            Controls.Add(txtEliminar);
+            Controls.Add(label1);
+            Controls.Add(cbGrado);
+            Controls.Add(txtApellidos);
+            Controls.Add(txtNombre);
             Controls.Add(toolStrip1);
             Controls.Add(DGVDatos);
             Name = "Academico";
@@ -155,9 +189,12 @@
         private ToolStripButton TSBEliminar;
         private ToolStripButton TSBInsertar;
         private ToolStripButton TSBEditar;
-        private ComboBox cbPiso;
-        private TextBox txtAula;
-        private TextBox txtEdificio;
-        private ComboBox cbCapacidad;
+        private TextBox txtApellidos;
+        private TextBox txtNombre;
+        private ComboBox cbGrado;
+        private Label label1;
+        private TextBox txtEliminar;
+        private Label label2;
+        private Button btnEliminar;
     }
 }
