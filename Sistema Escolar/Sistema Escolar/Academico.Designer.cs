@@ -53,6 +53,7 @@
             DGVDatos.Name = "DGVDatos";
             DGVDatos.Size = new Size(490, 274);
             DGVDatos.TabIndex = 0;
+            DGVDatos.SelectionChanged += DGVDatos_SelectionChanged;
             // 
             // toolStrip1
             // 
@@ -97,6 +98,7 @@
             TSBEditar.Name = "TSBEditar";
             TSBEditar.Size = new Size(41, 22);
             TSBEditar.Text = "Editar";
+            TSBEditar.Click += TSBEditar_Click;
             // 
             // txtApellidos
             // 

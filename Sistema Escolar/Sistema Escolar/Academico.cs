@@ -11,6 +11,7 @@ using System.Windows.Forms.VisualStyles;
 using System.IO;
 using System.Drawing;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using Microsoft.Data.SqlClient;
 
 namespace Sistema_Escolar
 {
@@ -63,7 +64,7 @@ namespace Sistema_Escolar
 
 
             //llenamos el DGV
-            DataTable sabe = BD.ObtenerDatos(consulta);
+            DataTable sabe = BD.Consultando(consulta);
             DGVDatos.DataSource = sabe;
         }
 
@@ -79,16 +80,30 @@ namespace Sistema_Escolar
 
 
             //consulta para seleccionar todos los registros
-            consulta = $"INSERT INTO [dbo].[Academico]\r\n           " +
-                $"([Nombre]\r\n           " +
-                $",[Apellidos]\r\n           " +
-                $",[Grado])\r\n     " +
-                $"VALUES\r\n           " +
-                $"('{txtNombre.Text}'\r\n           " +
-                $",'{txtApellidos.Text}'\r\n           " +
-                $",'{cbGrado.SelectedItem}')";           
+            consulta = @"INSERT INTO [dbo].[Academico]         " +
+                @"([Nombre]           " +
+                @",[Apellidos]           " +
+                @",[Grado])     " +
+                @"VALUES           " +
+                @"(@Nombre         " +
+                @",@Apellidos          " +
+                @",@Grado)";
 
-            BD.ObtenerDatos(consulta);
+
+            //estaba creando la condicional, pero no quería crear mas
+            //registros en mi base de datos. Le pregunte a deepseek si
+            //mi codigo hace lo que quiero y me enseñó lo que es el SQL Injection
+            //sugirió agregar esto para evitarlo y cambiar los parametros en mi 
+
+            var parametros = new List<SqlParameter>
+            {
+                new ("@Nombre", txtNombre.Text),
+                new ("@Apellidos", txtApellidos.Text),
+                new ("@Grado", cbGrado.SelectedItem)
+            };
+
+            //mandamos la consulta con los parametros de SQL
+            BD.Consultando(consulta);
 
             //llamamos al evento Obtenerdatos para actualizar la tabla
             TSBObtenerDatos.PerformClick();
@@ -115,7 +130,7 @@ namespace Sistema_Escolar
                 //condicional para asegurar que sea un numero
                 if (int.TryParse(txtEliminar.Text, out int id))
                 {
-                    BD.ObtenerDatos(consulta);
+                    BD.Consultando(consulta);
                     TSBObtenerDatos.PerformClick();
                 }
                 //le hacemos saber que pasa al usuario
@@ -123,6 +138,7 @@ namespace Sistema_Escolar
                 {
                     MessageBox.Show("Por favor ingrese un ID válido (número)", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtEliminar.Focus();
                 }
             }
             //le hacemos saber que pasa al usuario
@@ -130,9 +146,43 @@ namespace Sistema_Escolar
             {
                 MessageBox.Show("Por favor ingrese un ID a eliminar", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEliminar.Focus();
             }
 
 
+        }
+
+        private void TSBEditar_Click(object sender, EventArgs e)
+        {
+            if (DGVDatos.SelectedRows != null && DGVDatos.SelectedRows.Count > 0)
+            {
+                consulta = "UPDATE [dbo].[IDAcademico]\r\n      " +
+                " SET [Nombre] = \r\n      " +
+                ",[Apellidos]\r\n      " +
+                ",[Grado]\r\n      " +
+                ",[FechaHoraCreacion]\r\n  " +
+                "FROM [dbo].[Academico]";
+            }
+            else
+            {
+                MessageBox.Show("Porfavor seleccione un registro para editarlo.");
+            }
+        }
+
+        private void DGVDatos_SelectionChanged(object sender, EventArgs e)
+        {
+            if(DGVDatos.SelectedRows != null && DGVDatos.SelectedRows.Count > 0)
+            {
+                DataGridViewRow r = DGVDatos.SelectedRows[0];
+                txtNombre.Text =
+                        r.Cells["Nombre"].Value.ToString();
+
+                cbGrado.SelectedItem =
+                    r.Cells["Grado"].Value.ToString();
+
+                txtApellidos.Text =
+                    r.Cells["Apellidos"].Value.ToString();
+            }
         }
     }
 }

@@ -50,8 +50,9 @@ namespace Sistema_Escolar.Models
             }
         }
 
-
-        public DataTable ObtenerDatos(String consulta)
+        //metodo principal para los comandos SQL
+        public DataTable Consultando(String consulta,
+            List<SqlParameter> parametros = null)
         {
             DataTable tablita = new DataTable();
 
@@ -59,11 +60,31 @@ namespace Sistema_Escolar.Models
             {
                 using (SqlConnection conexion = new SqlConnection(this.conexion))
                 {
+                    //abrimos conexion aunque por alguna razon no hace falta
                     conexion.Open();
 
 
                     using (SqlCommand comandito = new SqlCommand(consulta, conexion))
                     {
+                        //funciona junto a SqlParameter
+                        if (parametros != null)
+                        {
+                            comandito.Parameters.AddRange(parametros.ToArray());
+                        }
+
+                        //creamos un mensaje al usuario para poder informarle
+                        //los registros modificados
+                        int renglones = comandito.ExecuteNonQuery();
+                        if (renglones > 0)
+                        {
+                            MessageBox.Show($"Se han modificado {renglones} renglones.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error. NO se ha modificado ningun registro");
+                        }
+
+
                         using (SqlDataAdapter adaptador = new SqlDataAdapter(comandito))
                         {
                             adaptador.Fill(tablita);
@@ -80,8 +101,5 @@ namespace Sistema_Escolar.Models
             }
             return tablita;
         }
-
-        
-
     }
 }

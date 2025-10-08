@@ -1,25 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\gaelg\\source\\repos\\Sistema Escolar\\Sistema Escolar\\base-de-datos\\Sistema Escolar\\",
+  "WorkspaceRootPath": "C:\\Users\\gaelg\\OneDrive\\Documentos\\GitHub\\base-de-datos\\Sistema Escolar\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3692052D-1182-4830-B951-394C47D03ED7}|Sistema Escolar\\Sistema Escolar.csproj|c:\\users\\gaelg\\source\\repos\\sistema escolar\\sistema escolar\\base-de-datos\\sistema escolar\\sistema escolar\\academico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3692052D-1182-4830-B951-394C47D03ED7}|Sistema Escolar\\Sistema Escolar.csproj|c:\\users\\gaelg\\onedrive\\documentos\\github\\base-de-datos\\sistema escolar\\sistema escolar\\academico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3692052D-1182-4830-B951-394C47D03ED7}|Sistema Escolar\\Sistema Escolar.csproj|solutionrelative:sistema escolar\\academico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3692052D-1182-4830-B951-394C47D03ED7}|Sistema Escolar\\Sistema Escolar.csproj|c:\\users\\gaelg\\source\\repos\\sistema escolar\\sistema escolar\\base-de-datos\\sistema escolar\\sistema escolar\\academico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{3692052D-1182-4830-B951-394C47D03ED7}|Sistema Escolar\\Sistema Escolar.csproj|c:\\users\\gaelg\\onedrive\\documentos\\github\\base-de-datos\\sistema escolar\\sistema escolar\\academico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{3692052D-1182-4830-B951-394C47D03ED7}|Sistema Escolar\\Sistema Escolar.csproj|solutionrelative:sistema escolar\\academico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3692052D-1182-4830-B951-394C47D03ED7}|Sistema Escolar\\Sistema Escolar.csproj|c:\\users\\gaelg\\source\\repos\\sistema escolar\\sistema escolar\\base-de-datos\\sistema escolar\\sistema escolar\\models\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3692052D-1182-4830-B951-394C47D03ED7}|Sistema Escolar\\Sistema Escolar.csproj|c:\\users\\gaelg\\onedrive\\documentos\\github\\base-de-datos\\sistema escolar\\sistema escolar\\models\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3692052D-1182-4830-B951-394C47D03ED7}|Sistema Escolar\\Sistema Escolar.csproj|solutionrelative:sistema escolar\\models\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3692052D-1182-4830-B951-394C47D03ED7}|Sistema Escolar\\Sistema Escolar.csproj|C:\\Users\\gaelg\\source\\repos\\Sistema Escolar\\Sistema Escolar\\base-de-datos\\Sistema Escolar\\sistema escolar\\ventanaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{3692052D-1182-4830-B951-394C47D03ED7}|Sistema Escolar\\Sistema Escolar.csproj|C:\\Users\\gaelg\\OneDrive\\Documentos\\GitHub\\base-de-datos\\Sistema Escolar\\sistema escolar\\ventanaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{3692052D-1182-4830-B951-394C47D03ED7}|Sistema Escolar\\Sistema Escolar.csproj|solutionrelative:sistema escolar\\ventanaprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3692052D-1182-4830-B951-394C47D03ED7}|Sistema Escolar\\Sistema Escolar.csproj|c:\\users\\gaelg\\source\\repos\\sistema escolar\\sistema escolar\\base-de-datos\\sistema escolar\\sistema escolar\\sistema escolar.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{3692052D-1182-4830-B951-394C47D03ED7}|Sistema Escolar\\Sistema Escolar.csproj|c:\\users\\gaelg\\onedrive\\documentos\\github\\base-de-datos\\sistema escolar\\sistema escolar\\sistema escolar.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{3692052D-1182-4830-B951-394C47D03ED7}|Sistema Escolar\\Sistema Escolar.csproj|solutionrelative:sistema escolar\\sistema escolar.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
@@ -30,17 +30,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Conexion.cs",
-              "DocumentMoniker": "C:\\Users\\gaelg\\source\\repos\\Sistema Escolar\\Sistema Escolar\\base-de-datos\\Sistema Escolar\\Sistema Escolar\\Models\\Conexion.cs",
+              "DocumentMoniker": "C:\\Users\\gaelg\\OneDrive\\Documentos\\GitHub\\base-de-datos\\Sistema Escolar\\Sistema Escolar\\Models\\Conexion.cs",
               "RelativeDocumentMoniker": "Sistema Escolar\\Models\\Conexion.cs",
-              "ToolTip": "C:\\Users\\gaelg\\source\\repos\\Sistema Escolar\\Sistema Escolar\\base-de-datos\\Sistema Escolar\\Sistema Escolar\\Models\\Conexion.cs",
+              "ToolTip": "C:\\Users\\gaelg\\OneDrive\\Documentos\\GitHub\\base-de-datos\\Sistema Escolar\\Sistema Escolar\\Models\\Conexion.cs",
               "RelativeToolTip": "Sistema Escolar\\Models\\Conexion.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAIwDcAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAqwD4AAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-07T04:15:29.659Z",
               "IsPinned": true,
@@ -48,37 +48,37 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Academico.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\gaelg\\OneDrive\\Documentos\\GitHub\\base-de-datos\\Sistema Escolar\\Sistema Escolar\\Academico.cs",
+              "RelativeDocumentMoniker": "Sistema Escolar\\Academico.cs",
+              "ToolTip": "C:\\Users\\gaelg\\OneDrive\\Documentos\\GitHub\\base-de-datos\\Sistema Escolar\\Sistema Escolar\\Academico.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Sistema Escolar\\Academico.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T21:44:04.539Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Academico.cs",
-              "DocumentMoniker": "C:\\Users\\gaelg\\source\\repos\\Sistema Escolar\\Sistema Escolar\\base-de-datos\\Sistema Escolar\\Sistema Escolar\\Academico.cs",
+              "DocumentMoniker": "C:\\Users\\gaelg\\OneDrive\\Documentos\\GitHub\\base-de-datos\\Sistema Escolar\\Sistema Escolar\\Academico.cs",
               "RelativeDocumentMoniker": "Sistema Escolar\\Academico.cs",
-              "ToolTip": "C:\\Users\\gaelg\\source\\repos\\Sistema Escolar\\Sistema Escolar\\base-de-datos\\Sistema Escolar\\Sistema Escolar\\Academico.cs",
+              "ToolTip": "C:\\Users\\gaelg\\OneDrive\\Documentos\\GitHub\\base-de-datos\\Sistema Escolar\\Sistema Escolar\\Academico.cs",
               "RelativeToolTip": "Sistema Escolar\\Academico.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAiwFgAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAcwLsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-08T03:59:42.492Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Academico.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\gaelg\\source\\repos\\Sistema Escolar\\Sistema Escolar\\base-de-datos\\Sistema Escolar\\Sistema Escolar\\Academico.cs",
-              "RelativeDocumentMoniker": "Sistema Escolar\\Academico.cs",
-              "ToolTip": "C:\\Users\\gaelg\\source\\repos\\Sistema Escolar\\Sistema Escolar\\base-de-datos\\Sistema Escolar\\Sistema Escolar\\Academico.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Sistema Escolar\\Academico.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-07T06:00:19.509Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "VentanaPrincipal.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\gaelg\\source\\repos\\Sistema Escolar\\Sistema Escolar\\base-de-datos\\Sistema Escolar\\Sistema Escolar\\VentanaPrincipal.cs",
+              "DocumentMoniker": "C:\\Users\\gaelg\\OneDrive\\Documentos\\GitHub\\base-de-datos\\Sistema Escolar\\Sistema Escolar\\VentanaPrincipal.cs",
               "RelativeDocumentMoniker": "Sistema Escolar\\VentanaPrincipal.cs",
               "ToolTip": "C:\\Users\\gaelg\\source\\repos\\Sistema Escolar\\Sistema Escolar\\base-de-datos\\Sistema Escolar\\Sistema Escolar\\VentanaPrincipal.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Sistema Escolar\\VentanaPrincipal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\source\\repos\\Sistema Escolar\\Sistema Escolar\\base-de-datos\\Sistema Escolar\\Sistema Escolar\\VentanaPrincipal.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-07T04:17:07.745Z"
             },
@@ -86,9 +86,9 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Sistema Escolar.csproj",
-              "DocumentMoniker": "C:\\Users\\gaelg\\source\\repos\\Sistema Escolar\\Sistema Escolar\\base-de-datos\\Sistema Escolar\\Sistema Escolar\\Sistema Escolar.csproj",
+              "DocumentMoniker": "C:\\Users\\gaelg\\OneDrive\\Documentos\\GitHub\\base-de-datos\\Sistema Escolar\\Sistema Escolar\\Sistema Escolar.csproj",
               "RelativeDocumentMoniker": "Sistema Escolar\\Sistema Escolar.csproj",
-              "ToolTip": "C:\\Users\\gaelg\\source\\repos\\Sistema Escolar\\Sistema Escolar\\base-de-datos\\Sistema Escolar\\Sistema Escolar\\Sistema Escolar.csproj",
+              "ToolTip": "C:\\Users\\gaelg\\OneDrive\\Documentos\\GitHub\\base-de-datos\\Sistema Escolar\\Sistema Escolar\\Sistema Escolar.csproj",
               "RelativeToolTip": "Sistema Escolar\\Sistema Escolar.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",

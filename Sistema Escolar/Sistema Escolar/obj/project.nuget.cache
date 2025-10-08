@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lM215jKZ52g=",
+  "dgSpecHash": "lzUlwbsi41w=",
   "success": true,
-  "projectFilePath": "C:\\Users\\gaelg\\source\\repos\\Sistema Escolar\\Sistema Escolar\\base-de-datos\\Sistema Escolar\\Sistema Escolar\\Sistema Escolar.csproj",
+  "projectFilePath": "C:\\Users\\gaelg\\OneDrive\\Documentos\\GitHub\\base-de-datos\\Sistema Escolar\\Sistema Escolar\\Sistema Escolar.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gaelg\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\gaelg\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
