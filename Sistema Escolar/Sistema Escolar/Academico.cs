@@ -157,11 +157,22 @@ namespace Sistema_Escolar
             if (DGVDatos.SelectedRows != null && DGVDatos.SelectedRows.Count > 0)
             {
                 consulta = "UPDATE [dbo].[IDAcademico]\r\n      " +
-                " SET [Nombre] = \r\n      " +
-                ",[Apellidos]\r\n      " +
-                ",[Grado]\r\n      " +
-                ",[FechaHoraCreacion]\r\n  " +
-                "FROM [dbo].[Academico]";
+                " SET [Nombre] = @Nombre\r\n      " +
+                ",[Apellidos] = @Apellidos\r\n      " +
+                ",[Grado] = @Grado\r\n      " +
+                "WHERE [dbo].[IDAcademico] = @ID";
+
+                DataGridViewRow r = DGVDatos.SelectedRows[0];
+
+                var parametros = new List<SqlParameter>
+                {
+                    new ("@Nombre",txtNombre.Text.Trim()),
+                    new ("@Apellidos", txtApellidos.Text.Trim()),
+                    new ("@Grado", cbGrado.SelectedItem ?? DBNull.Value),
+                    new ("@ID", Convert.ToInt32(r.Cells["ID"].Value))
+                };
+
+
             }
             else
             {
