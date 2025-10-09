@@ -1,4 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.IdentityModel.Protocols.OpenIdConnect;
+using Sistema_Escolar.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +15,11 @@ namespace Sistema_Escolar
 {
     public partial class Aula : Form
     {
+
+        Models.Conexion BD = new Conexion();
+        private String consulta;
+
+
         public Aula()
         {
             InitializeComponent();
