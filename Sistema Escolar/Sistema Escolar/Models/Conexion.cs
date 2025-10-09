@@ -72,24 +72,12 @@ namespace Sistema_Escolar.Models
                             comandito.Parameters.AddRange(parametros.ToArray());
                         }
 
-                        //creamos un mensaje al usuario para poder informarle
-                        //los registros modificados
-                        int renglones = comandito.ExecuteNonQuery();
-                        if (renglones > 0)
-                        {
-                            MessageBox.Show($"Se han modificado {renglones} renglones.");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error. NO se ha modificado ningun registro");
-                        }
-
-
                         using (SqlDataAdapter adaptador = new SqlDataAdapter(comandito))
                         {
                             adaptador.Fill(tablita);
                         }
                     }
+                    
                 }
 
 

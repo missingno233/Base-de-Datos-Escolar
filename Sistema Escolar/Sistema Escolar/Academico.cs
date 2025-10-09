@@ -17,7 +17,12 @@ namespace Sistema_Escolar
 {
     public partial class Academico : Form
     {
+        //creamos el objeto BD para llamar su
+        //metodo para mandar consultas
         private Models.Conexion BD = new();
+
+        //para no crear una y otra vez la misma
+        //consulta solo sobreescribirla 
         private string? consulta;
 
 
@@ -48,6 +53,8 @@ namespace Sistema_Escolar
                 }
             }
 
+            //para poder poder activarlo
+            //cuando quieras eliminar
             txtEliminar.Enabled = false;
             btnEliminar.Enabled = false;
         }
@@ -80,15 +87,14 @@ namespace Sistema_Escolar
 
 
             //consulta para seleccionar todos los registros
-            consulta = @"INSERT INTO [dbo].[Academico]         " +
-                @"([Nombre]           " +
-                @",[Apellidos]           " +
-                @",[Grado])     " +
-                @"VALUES           " +
-                @"(@Nombre         " +
-                @",@Apellidos          " +
-                @",@Grado)";
-
+            consulta = "INSERT INTO[dbo].[Academico]\r\n            " +
+                "([Nombre]\r\n           " +
+                ", [Apellidos]\r\n           " +
+                ", [Grado])\r\n           " +
+                " VALUES" +
+                "(@Nombre\r\n         " +
+                ",@Apellidos\r\n          " +
+                ",@Grado)";
 
             //estaba creando la condicional, pero no quería crear mas
             //registros en mi base de datos. Le pregunte a deepseek si
@@ -97,13 +103,13 @@ namespace Sistema_Escolar
 
             var parametros = new List<SqlParameter>
             {
-                new ("@Nombre", txtNombre.Text),
-                new ("@Apellidos", txtApellidos.Text),
+                new ("@Nombre", txtNombre.Text.Trim()),
+                new ("@Apellidos", txtApellidos.Text.Trim()),
                 new ("@Grado", cbGrado.SelectedItem)
             };
 
             //mandamos la consulta con los parametros de SQL
-            BD.Consultando(consulta);
+            BD.Consultando(consulta, parametros);
 
             //llamamos al evento Obtenerdatos para actualizar la tabla
             TSBObtenerDatos.PerformClick();
@@ -149,41 +155,58 @@ namespace Sistema_Escolar
                 txtEliminar.Focus();
             }
 
+            btnEliminar.Enabled = false;
+            txtEliminar.Enabled = false;
 
         }
 
         private void TSBEditar_Click(object sender, EventArgs e)
         {
+            //es una herramienta misteriosa que nos ayudara mas tarde...
+            DataGridViewRow r = DGVDatos.SelectedRows[0];
+
+
+            //condicional para poder actualizar facilmente
             if (DGVDatos.SelectedRows != null && DGVDatos.SelectedRows.Count > 0)
             {
-                consulta = "UPDATE [dbo].[IDAcademico]\r\n      " +
+                //consulta para editar
+                consulta = "UPDATE [dbo].[Academico]\r\n      " +
                 " SET [Nombre] = @Nombre\r\n      " +
                 ",[Apellidos] = @Apellidos\r\n      " +
                 ",[Grado] = @Grado\r\n      " +
-                "WHERE [dbo].[IDAcademico] = @ID";
+                ",[FechaHoraCreacion] = @FechaCreacion\r\n" +
+                "WHERE [IDAcademico] = @ID";
 
-                DataGridViewRow r = DGVDatos.SelectedRows[0];
 
+                //creamos los parametros necesarios
                 var parametros = new List<SqlParameter>
                 {
                     new ("@Nombre",txtNombre.Text.Trim()),
                     new ("@Apellidos", txtApellidos.Text.Trim()),
-                    new ("@Grado", cbGrado.SelectedItem ?? DBNull.Value),
-                    new ("@ID", Convert.ToInt32(r.Cells["ID"].Value))
+                    new ("@Grado", cbGrado.SelectedItem.ToString()),
+                    new ("@ID", Convert.ToInt32(r.Cells["IDAcademico"].Value)),
+                    new ("@FechaCreacion", DateTime.Now)//vi necesario aqui darle la una fecha aunque mi base
+                                                        //ya lo hace por si sola
                 };
 
+                BD.Consultando(consulta, parametros);
 
+                TSBObtenerDatos.PerformClick();
             }
             else
             {
-                MessageBox.Show("Porfavor seleccione un registro para editarlo.");
+                MessageBox.Show("Porfavor seleccione un registro para editarlo.", "Advertencia",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void DGVDatos_SelectionChanged(object sender, EventArgs e)
         {
-            if(DGVDatos.SelectedRows != null && DGVDatos.SelectedRows.Count > 0)
+
+            //con esta condicional llenamos los textbox y el combo
+            if (DGVDatos.SelectedRows != null && DGVDatos.SelectedRows.Count > 0)
             {
+                //para evitar la fatiga
                 DataGridViewRow r = DGVDatos.SelectedRows[0];
                 txtNombre.Text =
                         r.Cells["Nombre"].Value.ToString();
@@ -194,6 +217,11 @@ namespace Sistema_Escolar
                 txtApellidos.Text =
                     r.Cells["Apellidos"].Value.ToString();
             }
+        }
+
+        private void TSBSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
