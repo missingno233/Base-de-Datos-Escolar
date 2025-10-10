@@ -64,8 +64,7 @@ namespace Sistema_Escolar
         private void TSBInsertar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtNombre.Text) ||
-                string.IsNullOrEmpty(txtSiglas.Text) ||
-                cbGrado.SelectedItem == null)
+                string.IsNullOrEmpty(txtSiglas.Text))
             {
                 MessageBox.Show("Porfavor, no deje espacios vacios");
                 return;
@@ -76,16 +75,15 @@ namespace Sistema_Escolar
                 "([NombreCarrera]\r\n           " +
                 ",[SiglasCarrear])\r\n     " +
                 "VALUES\r\n           " +
-                "(<NombreCarrera, varchar(40),>\r\n           " +
-                ",<SiglasCarrear, varchar(5))";
+                "(@Nombre\r\n           " +
+                ",@Siglas)";
 
             
 
             var parametros = new List<SqlParameter>
             {
                 new ("@Nombre", txtNombre.Text.Trim()),
-                new ("@Apellidos", txtSiglas.Text.Trim()),
-                new ("@Grado", cbGrado.SelectedItem)
+                new ("@Siglas", txtSiglas.Text.Trim()),
             };
 
             BD.Consultando(consulta, parametros);
@@ -136,8 +134,7 @@ namespace Sistema_Escolar
         private void TSBEditar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtNombre.Text) ||
-                string.IsNullOrEmpty(txtSiglas.Text) ||
-                cbGrado.SelectedItem == null)
+                string.IsNullOrEmpty(txtSiglas.Text))
             {
                 //le informamos al usuario
                 MessageBox.Show("Porfavor, no deje espacios vacios");
@@ -152,18 +149,17 @@ namespace Sistema_Escolar
             if (DGVDatos.SelectedRows != null && DGVDatos.SelectedRows.Count > 0)
             {
                 consulta = "UPDATE [dbo].[Carrera]\r\n   " +
-                    "SET [NombreCarrera] = <NombreCarrera, varchar(40),>\r\n      " +
-                    ",[SiglasCarrear] = <SiglasCarrear, varchar(5),>\r\n      " +
-                    ",[FechaHoraCreacion] = <FechaHoraCreacion, date,>\r\n " +
-                    "WHERE <Condiciones de búsqueda,,>\r\n";
+                    "SET [NombreCarrera] = @Nombre\r\n      " +
+                    ",[SiglasCarrear] = @Siglas\r\n      " +
+                    ",[FechaHoraCreacion] = @FechaCreacion\r\n " +
+                    "WHERE IDCarrera = @ID\r\n";
 
 
 
                 var parametros = new List<SqlParameter>
                 {
                     new ("@Nombre",txtNombre.Text.Trim()),
-                    new ("@Apellidos", txtSiglas.Text.Trim()),
-                    new ("@Grado", cbGrado.SelectedItem.ToString()),
+                    new ("@Siglas", txtSiglas.Text.Trim()),
                     new ("@ID", Convert.ToInt32(r.Cells["IDAcademico"].Value)),
                     new ("@FechaCreacion", DateTime.Now)
                 };
@@ -187,9 +183,6 @@ namespace Sistema_Escolar
                 DataGridViewRow r = DGVDatos.SelectedRows[0];
                 txtNombre.Text =
                         r.Cells["Nombre"].Value.ToString();
-
-                cbGrado.SelectedItem =
-                    r.Cells["Grado"].Value.ToString();
 
                 txtSiglas.Text =
                     r.Cells["Apellidos"].Value.ToString();

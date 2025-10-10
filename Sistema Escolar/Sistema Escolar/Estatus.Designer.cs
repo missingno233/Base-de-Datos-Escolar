@@ -34,8 +34,8 @@
             TSBEliminar = new ToolStripButton();
             TSBInsertar = new ToolStripButton();
             TSBEditar = new ToolStripButton();
-            txtSiglas = new TextBox();
-            txtNombre = new TextBox();
+            txtNombreEstatus = new TextBox();
+            txtCLaveEstatus = new TextBox();
             txtEliminar = new TextBox();
             label2 = new Label();
             btnEliminar = new Button();
@@ -99,21 +99,21 @@
             TSBEditar.Text = "Editar";
             TSBEditar.Click += TSBEditar_Click;
             // 
-            // txtSiglas
+            // txtNombreEstatus
             // 
-            txtSiglas.Location = new Point(24, 348);
-            txtSiglas.Name = "txtSiglas";
-            txtSiglas.PlaceholderText = "Siglas";
-            txtSiglas.Size = new Size(136, 23);
-            txtSiglas.TabIndex = 10;
+            txtNombreEstatus.Location = new Point(24, 348);
+            txtNombreEstatus.Name = "txtNombreEstatus";
+            txtNombreEstatus.PlaceholderText = "Nombre Estatus";
+            txtNombreEstatus.Size = new Size(136, 23);
+            txtNombreEstatus.TabIndex = 10;
             // 
-            // txtNombre
+            // txtCLaveEstatus
             // 
-            txtNombre.Location = new Point(24, 319);
-            txtNombre.Name = "txtNombre";
-            txtNombre.PlaceholderText = "Nombre";
-            txtNombre.Size = new Size(136, 23);
-            txtNombre.TabIndex = 9;
+            txtCLaveEstatus.Location = new Point(24, 319);
+            txtCLaveEstatus.Name = "txtCLaveEstatus";
+            txtCLaveEstatus.PlaceholderText = "Clave Estatus";
+            txtCLaveEstatus.Size = new Size(136, 23);
+            txtCLaveEstatus.TabIndex = 9;
             // 
             // txtEliminar
             // 
@@ -141,7 +141,7 @@
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
-            // Estado
+            // Estatus
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -149,13 +149,13 @@
             Controls.Add(btnEliminar);
             Controls.Add(label2);
             Controls.Add(txtEliminar);
-            Controls.Add(txtSiglas);
-            Controls.Add(txtNombre);
+            Controls.Add(txtNombreEstatus);
+            Controls.Add(txtCLaveEstatus);
             Controls.Add(toolStrip1);
             Controls.Add(DGVDatos);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "Estado";
-            Text = "Estado";
+            Name = "Estatus";
+            Text = "Estatus";
             ((System.ComponentModel.ISupportInitialize)DGVDatos).EndInit();
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
@@ -171,8 +171,8 @@
         private ToolStripButton TSBEliminar;
         private ToolStripButton TSBInsertar;
         private ToolStripButton TSBEditar;
-        private TextBox txtSiglas;
-        private TextBox txtNombre;
+        private TextBox txtNombreEstatus;
+        private TextBox txtCLaveEstatus;
         private TextBox txtEliminar;
         private Label label2;
         private Button btnEliminar;

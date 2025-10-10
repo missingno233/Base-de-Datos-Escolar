@@ -5,7 +5,7 @@ namespace Sistema_Escolar.Models
 {
     public class Conexion
     {
-        private readonly string conexion = "Server=PCERDA\\SQLEXPRESS;"
+        private readonly string conexion = "Server=HP\\SQLEXPRESS;"
                             + " Database=Base Escolar;"
                             + " Integrated Security=True; "
                             + " TrustServerCertificate=True";

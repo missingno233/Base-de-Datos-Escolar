@@ -56,7 +56,7 @@ namespace Sistema_Escolar
                 ",[NombreEstatus]\r\n      " +
                 ",[FechaHoraCreacion]\r\n      " +
                 ",[Usuario]\r\n  " +
-                "FROM [dbo].[Estatus]\r\n"; 
+                "FROM [dbo].[Estatus]\r\n";
 
 
             DataTable sabe = BD.Consultando(consulta);
@@ -65,9 +65,8 @@ namespace Sistema_Escolar
 
         private void TSBInsertar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNombre.Text) ||
-                string.IsNullOrEmpty(txtSiglas.Text) ||
-                cbGrado.SelectedItem == null)
+            if (string.IsNullOrEmpty(txtCLaveEstatus.Text) ||
+                string.IsNullOrEmpty(txtNombreEstatus.Text))
             {
                 MessageBox.Show("Porfavor, no deje espacios vacios");
                 return;
@@ -80,19 +79,17 @@ namespace Sistema_Escolar
                 ",[FechaHoraCreacion]\r\n           " +
                 ",[Usuario])\r\n     " +
                 "VALUES\r\n           " +
-                "(<ClaveEstatus, int,>\r\n           " +
-                ",<NombreEstatus, varchar(25),>\r\n           " +
-                ",<FechaHoraCreacion, date,>\r\n           " +
-                ",<Usuario, varchar(25),>)\r\n";
+                "(@ClaveEstatus\r\n           " +
+                ",@NombreEstatus)\r\n";
 
 
 
             var parametros = new List<SqlParameter>
             {
-                new ("@Nombre", txtNombre.Text.Trim()),
-                new ("@Apellidos", txtSiglas.Text.Trim()),
-                new ("@Grado", cbGrado.SelectedItem)
+                new ("@ClaveEstatus", txtCLaveEstatus.Text.Trim()),
+                new ("@NombreEstatus", txtNombreEstatus.Text.Trim())
             };
+
 
             BD.Consultando(consulta, parametros);
 
@@ -141,9 +138,8 @@ namespace Sistema_Escolar
 
         private void TSBEditar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNombre.Text) ||
-                string.IsNullOrEmpty(txtSiglas.Text) ||
-                cbGrado.SelectedItem == null)
+            if (string.IsNullOrEmpty(txtCLaveEstatus.Text) ||
+                string.IsNullOrEmpty(txtNombreEstatus.Text))
             {
                 //le informamos al usuario
                 MessageBox.Show("Porfavor, no deje espacios vacios");
@@ -158,19 +154,18 @@ namespace Sistema_Escolar
             if (DGVDatos.SelectedRows != null && DGVDatos.SelectedRows.Count > 0)
             {
                 consulta = "UPDATE [dbo].[Estatus]\r\n   " +
-                    "SET [ClaveEstatus] = <ClaveEstatus, int,>\r\n      " +
-                    ",[NombreEstatus] = <NombreEstatus, varchar(25),>\r\n      " +
-                    ",[FechaHoraCreacion] = <FechaHoraCreacion, date,>\r\n      " +
-                    ",[Usuario] = <Usuario, varchar(25),>\r\n " +
-                    "WHERE <Condiciones de búsqueda,,>\r\n";
+                    "SET [ClaveEstatus] = @ClaveEstatus\r\n      " +
+                    ",[NombreEstatus] = @NombreEstatus\r\n      " +
+                    ",[FechaHoraCreacion] = @FechaCreacion\r\n      " +
+                    ",[Usuario] = <Usuario, varchar(25),>\r\n " +//pendiente
+                    "WHERE IDEstatus = @ID\r\n";
 
 
 
                 var parametros = new List<SqlParameter>
                 {
-                    new ("@Nombre",txtNombre.Text.Trim()),
-                    new ("@Apellidos", txtSiglas.Text.Trim()),
-                    new ("@Grado", cbGrado.SelectedItem.ToString()),
+                    new ("@ClaveEstatus",txtCLaveEstatus.Text.Trim()),
+                    new ("@NombreEstatus", txtNombreEstatus.Text.Trim()),
                     new ("@ID", Convert.ToInt32(r.Cells["IDAcademico"].Value)),
                     new ("@FechaCreacion", DateTime.Now)
                 };
@@ -192,14 +187,12 @@ namespace Sistema_Escolar
             if (DGVDatos.SelectedRows != null && DGVDatos.SelectedRows.Count > 0)
             {
                 DataGridViewRow r = DGVDatos.SelectedRows[0];
-                txtNombre.Text =
+                txtCLaveEstatus.Text =
                         r.Cells["Nombre"].Value.ToString();
 
-                cbGrado.SelectedItem =
-                    r.Cells["Grado"].Value.ToString();
-
-                txtSiglas.Text =
+                txtNombreEstatus.Text =
                     r.Cells["Apellidos"].Value.ToString();
             }
         }
     }
+}
