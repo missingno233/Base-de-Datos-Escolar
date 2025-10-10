@@ -162,6 +162,18 @@ namespace Sistema_Escolar
 
         private void TSBEditar_Click(object sender, EventArgs e)
         {
+            //validamos que los campos no esten vacios
+            if (string.IsNullOrEmpty(txtNombre.Text) ||
+                string.IsNullOrEmpty(txtApellidos.Text) ||
+                cbGrado.SelectedItem == null)
+            {
+                //le informamos al usuario
+                MessageBox.Show("Porfavor, no deje espacios vacios");
+                return;//evitamos que ejecute el codigo y se llene vacio
+            }
+
+
+
             //es una herramienta misteriosa que nos ayudara mas tarde...
             DataGridViewRow r = DGVDatos.SelectedRows[0];
 
@@ -217,11 +229,6 @@ namespace Sistema_Escolar
                 txtApellidos.Text =
                     r.Cells["Apellidos"].Value.ToString();
             }
-        }
-
-        private void TSBSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

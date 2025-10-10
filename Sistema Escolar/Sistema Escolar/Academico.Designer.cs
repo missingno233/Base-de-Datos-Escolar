@@ -34,7 +34,6 @@
             TSBEliminar = new ToolStripButton();
             TSBInsertar = new ToolStripButton();
             TSBEditar = new ToolStripButton();
-            TSBSalir = new ToolStripButton();
             txtApellidos = new TextBox();
             txtNombre = new TextBox();
             cbGrado = new ComboBox();
@@ -59,7 +58,7 @@
             // toolStrip1
             // 
             toolStrip1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { TSBObtenerDatos, TSBEliminar, TSBInsertar, TSBEditar, TSBSalir });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { TSBObtenerDatos, TSBEliminar, TSBInsertar, TSBEditar });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(515, 27);
@@ -101,17 +100,6 @@
             TSBEditar.Size = new Size(52, 24);
             TSBEditar.Text = "Editar";
             TSBEditar.Click += TSBEditar_Click;
-            // 
-            // TSBSalir
-            // 
-            TSBSalir.Alignment = ToolStripItemAlignment.Right;
-            TSBSalir.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            TSBSalir.Image = Properties.Resources.Cerrando;
-            TSBSalir.ImageTransparentColor = Color.Magenta;
-            TSBSalir.Name = "TSBSalir";
-            TSBSalir.Size = new Size(23, 24);
-            TSBSalir.Text = "toolStripButton1";
-            TSBSalir.Click += TSBSalir_Click;
             // 
             // txtApellidos
             // 
@@ -178,7 +166,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(515, 378);
-            ControlBox = false;
             Controls.Add(btnEliminar);
             Controls.Add(label2);
             Controls.Add(txtEliminar);
@@ -213,6 +200,5 @@
         private TextBox txtEliminar;
         private Label label2;
         private Button btnEliminar;
-        private ToolStripButton TSBSalir;
     }
 }

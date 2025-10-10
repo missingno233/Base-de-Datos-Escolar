@@ -34,14 +34,15 @@
             TSBEliminar = new ToolStripButton();
             TSBInsertar = new ToolStripButton();
             TSBEditar = new ToolStripButton();
-            TSBSalir = new ToolStripButton();
-            txtApellidos = new TextBox();
-            txtNombre = new TextBox();
+            txtAula = new TextBox();
+            txtEdificio = new TextBox();
             txtEliminar = new TextBox();
             label2 = new Label();
             btnEliminar = new Button();
-            RBEstatus = new RadioButton();
-            radioButton1 = new RadioButton();
+            cbPiso = new ComboBox();
+            cbCapacidad = new ComboBox();
+            label1 = new Label();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)DGVDatos).BeginInit();
             toolStrip1.SuspendLayout();
             SuspendLayout();
@@ -59,7 +60,7 @@
             // toolStrip1
             // 
             toolStrip1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { TSBObtenerDatos, TSBEliminar, TSBInsertar, TSBEditar, TSBSalir });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { TSBObtenerDatos, TSBEliminar, TSBInsertar, TSBEditar });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(515, 27);
@@ -102,36 +103,25 @@
             TSBEditar.Text = "Editar";
             TSBEditar.Click += TSBEditar_Click;
             // 
-            // TSBSalir
+            // txtAula
             // 
-            TSBSalir.Alignment = ToolStripItemAlignment.Right;
-            TSBSalir.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            TSBSalir.Image = Properties.Resources.Cerrando;
-            TSBSalir.ImageTransparentColor = Color.Magenta;
-            TSBSalir.Name = "TSBSalir";
-            TSBSalir.Size = new Size(23, 24);
-            TSBSalir.Text = "toolStripButton1";
-            TSBSalir.Click += TSBSalir_Click;
+            txtAula.Location = new Point(24, 348);
+            txtAula.Name = "txtAula";
+            txtAula.PlaceholderText = "Aula";
+            txtAula.Size = new Size(136, 23);
+            txtAula.TabIndex = 10;
             // 
-            // txtApellidos
+            // txtEdificio
             // 
-            txtApellidos.Location = new Point(24, 348);
-            txtApellidos.Name = "txtApellidos";
-            txtApellidos.PlaceholderText = "Apellidos";
-            txtApellidos.Size = new Size(136, 23);
-            txtApellidos.TabIndex = 10;
-            // 
-            // txtNombre
-            // 
-            txtNombre.Location = new Point(24, 319);
-            txtNombre.Name = "txtNombre";
-            txtNombre.PlaceholderText = "Nombre";
-            txtNombre.Size = new Size(136, 23);
-            txtNombre.TabIndex = 9;
+            txtEdificio.Location = new Point(24, 319);
+            txtEdificio.Name = "txtEdificio";
+            txtEdificio.PlaceholderText = "Edificio";
+            txtEdificio.Size = new Size(136, 23);
+            txtEdificio.TabIndex = 9;
             // 
             // txtEliminar
             // 
-            txtEliminar.Location = new Point(197, 319);
+            txtEliminar.Location = new Point(403, 319);
             txtEliminar.Name = "txtEliminar";
             txtEliminar.Size = new Size(100, 23);
             txtEliminar.TabIndex = 14;
@@ -139,7 +129,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(177, 323);
+            label2.Location = new Point(383, 323);
             label2.Name = "label2";
             label2.Size = new Size(18, 15);
             label2.TabIndex = 15;
@@ -147,7 +137,7 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(313, 319);
+            btnEliminar.Location = new Point(428, 348);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(75, 23);
             btnEliminar.TabIndex = 16;
@@ -155,41 +145,56 @@
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
-            // RBEstatus
+            // cbPiso
             // 
-            RBEstatus.AutoSize = true;
-            RBEstatus.Location = new Point(181, 353);
-            RBEstatus.Name = "RBEstatus";
-            RBEstatus.Size = new Size(59, 19);
-            RBEstatus.TabIndex = 17;
-            RBEstatus.TabStop = true;
-            RBEstatus.Text = "Activo";
-            RBEstatus.UseVisualStyleBackColor = true;
+            cbPiso.FormattingEnabled = true;
+            cbPiso.Items.AddRange(new object[] { "1ro", "2do", "3ro" });
+            cbPiso.Location = new Point(239, 320);
+            cbPiso.Name = "cbPiso";
+            cbPiso.Size = new Size(48, 23);
+            cbPiso.TabIndex = 19;
             // 
-            // radioButton1
+            // cbCapacidad
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(246, 353);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(67, 19);
-            radioButton1.TabIndex = 18;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Inactivo";
-            radioButton1.UseVisualStyleBackColor = true;
+            cbCapacidad.FormattingEnabled = true;
+            cbCapacidad.Items.AddRange(new object[] { "15", "20", "25", "30", "35", "40" });
+            cbCapacidad.Location = new Point(239, 349);
+            cbCapacidad.Name = "cbCapacidad";
+            cbCapacidad.Size = new Size(48, 23);
+            cbCapacidad.TabIndex = 20;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(204, 323);
+            label1.Name = "label1";
+            label1.Size = new Size(29, 15);
+            label1.TabIndex = 21;
+            label1.Text = "Piso";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(170, 351);
+            label3.Name = "label3";
+            label3.Size = new Size(63, 15);
+            label3.TabIndex = 22;
+            label3.Text = "Capacidad";
             // 
             // Aula
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(515, 378);
-            ControlBox = false;
-            Controls.Add(radioButton1);
-            Controls.Add(RBEstatus);
+            Controls.Add(label3);
+            Controls.Add(label1);
+            Controls.Add(cbCapacidad);
+            Controls.Add(cbPiso);
             Controls.Add(btnEliminar);
             Controls.Add(label2);
             Controls.Add(txtEliminar);
-            Controls.Add(txtApellidos);
-            Controls.Add(txtNombre);
+            Controls.Add(txtAula);
+            Controls.Add(txtEdificio);
             Controls.Add(toolStrip1);
             Controls.Add(DGVDatos);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -210,13 +215,14 @@
         private ToolStripButton TSBEliminar;
         private ToolStripButton TSBInsertar;
         private ToolStripButton TSBEditar;
-        private TextBox txtApellidos;
-        private TextBox txtNombre;
+        private TextBox txtAula;
+        private TextBox txtEdificio;
         private TextBox txtEliminar;
         private Label label2;
         private Button btnEliminar;
-        private RadioButton RBEstatus;
-        private ToolStripButton TSBSalir;
-        private RadioButton radioButton1;
+        private ComboBox cbPiso;
+        private ComboBox cbCapacidad;
+        private Label label1;
+        private Label label3;
     }
 }

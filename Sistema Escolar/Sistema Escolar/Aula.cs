@@ -55,12 +55,13 @@ namespace Sistema_Escolar
         private void TSBObtenerDatos_Click(object sender, EventArgs e)
         {
 
-            consulta = "SELECT [IDAlumno]\r\n      " +
-                ",[Nombre]\r\n      " +
-                ",[Apellidos]\r\n      " +
-                ",[Estatus]\r\n      " +
+            consulta = "SELECT [IDAula]\r\n      " +
+                ",[Edificio]\r\n      " +
+                ",[Aula]\r\n      " +
+                ",[Piso]\r\n      " +
+                ",[CapacidadMaxima]\r\n      " +
                 ",[FechaHoraCreacion]\r\n  " +
-                "FROM [dbo].[Alumno]";
+                "FROM [dbo].[Aula]\r\n";
 
 
 
@@ -70,29 +71,34 @@ namespace Sistema_Escolar
 
         private void TSBInsertar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtNombre.Text) ||
-                string.IsNullOrEmpty(txtApellidos.Text))
+            if (string.IsNullOrEmpty(txtEdificio.Text) ||
+                string.IsNullOrEmpty(txtAula.Text) ||
+                cbCapacidad.SelectedItem == null ||
+                cbPiso.SelectedItem == null)
             {
                 MessageBox.Show("Porfavor, no deje espacios vacios");
                 return;
             }
 
 
-            consulta = "INSERT INTO [dbo].[Alumno]\r\n           " +
-                "([Nombre]\r\n           " +
-                ",[Apellidos]\r\n           " +
-                ",[Estatus])\r\n     " +
+            consulta = "INSERT INTO [dbo].[Aula]\r\n           " +
+                "([Edificio]\r\n           " +
+                ",[Aula]\r\n           " +
+                ",[Piso]\r\n           " +
+                ",[CapacidadMaxima])\r\n     " +
                 "VALUES\r\n           " +
-                "(@Nombre\r\n           " +
-                ",@Apellidos\r\n           " +
-                ",@Estatus)\r\n";
+                "(@Edificio\r\n           " +
+                ",@Aula\r\n           " +
+                ",@Piso\r\n           " +
+                ",@CapacidadMaxima)";
 
 
             var parametros = new List<SqlParameter>
             {
-                new ("@Nombre", txtNombre.Text.Trim()),
-                new ("@Apellidos", txtApellidos.Text.Trim()),
-                new ("@Estatus", RBEstatus.Checked)
+                new ("@Edificio", txtEdificio.Text.Trim()),
+                new ("@Aula", txtAula.Text.Trim()),
+                new ("@Piso", cbPiso.SelectedItem.ToString()),
+                new ("@CapacidadMaxima", cbCapacidad.SelectedItem.ToString())
             };
 
             BD.Consultando(consulta, parametros);
@@ -110,8 +116,8 @@ namespace Sistema_Escolar
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            consulta = $"DELETE FROM [dbo].[Alumno]\r\n      " +
-                $"WHERE IDAlumno = {txtEliminar.Text}";
+            consulta = $"DELETE FROM [dbo].[Aula]\r\n      " +
+                $"WHERE IDAula = {txtEliminar.Text}";
 
             if (!string.IsNullOrEmpty(txtEliminar.Text))
             {
@@ -141,32 +147,42 @@ namespace Sistema_Escolar
 
         private void TSBEditar_Click(object sender, EventArgs e)
         {
-            //es una herramienta misteriosa que nos ayudara mas tarde...
+            if (string.IsNullOrEmpty(txtEdificio.Text) ||
+                string.IsNullOrEmpty(txtAula.Text) ||
+                cbCapacidad.SelectedItem == null ||
+                cbPiso.SelectedItem == null)
+            {
+                MessageBox.Show("Porfavor, no deje espacios vacios");
+                return;
+            }
+
+
             DataGridViewRow r = DGVDatos.SelectedRows[0];
 
 
-            //condicional para poder actualizar facilmente
             if (DGVDatos.SelectedRows != null && DGVDatos.SelectedRows.Count > 0)
             {
-                //consulta para editar
-                consulta = "UPDATE [dbo].[Alumno]\r\n   " +
-                    "SET [Nombre] = @Nombre\r\n      " +
-                    ",[Apellidos] = @Apellidos\r\n      " +
-                    ",[Estatus] = @Estatus\r\n      " +
+                
+
+                consulta = "UPDATE [dbo].[Aula]\r\n   " +
+                    "SET [Edificio] = @Edificio\r\n      " +
+                    ",[Aula] = @Aula\r\n      " +
+                    ",[Piso] = @Piso\r\n      " +
+                    ",[CapacidadMaxima] = @CapacidadMaxima\r\n      " +
                     ",[FechaHoraCreacion] = @FechaCreacion\r\n " +
-                    "WHERE IDAlumno = @ID\r\n";
+                    "WHERE IDAula = @ID";
 
-
-                //creamos los parametros necesarios
                 var parametros = new List<SqlParameter>
                 {
-                    new ("@Nombre",txtNombre.Text.Trim()),
-                    new ("@Apellidos", txtApellidos.Text.Trim()),
-                    new ("@Estatus", RBEstatus.Checked),
-                    new ("@ID", Convert.ToInt32(r.Cells["IDAlumno"].Value)),
-                    new ("@FechaCreacion", DateTime.Now)//vi necesario aqui darle la una fecha aunque mi base
-                                                        //ya lo hace por si sola
+                    new ("@Edificio", txtEdificio.Text.Trim()),
+                    new ("@Aula", txtAula.Text.Trim()),
+                    new ("@Piso", cbPiso.SelectedItem.ToString()),
+                    new ("@CapacidadMaxima", cbCapacidad.SelectedItem.ToString()),
+                    new ("@ID", Convert.ToInt32(r.Cells["IDAcademico"].Value)),
+                    new ("@FechaCreacion", DateTime.Now)
                 };
+                
+                
 
                 BD.Consultando(consulta, parametros);
 
@@ -185,20 +201,19 @@ namespace Sistema_Escolar
             if (DGVDatos.SelectedRows != null && DGVDatos.SelectedRows.Count > 0)
             {
                 DataGridViewRow r = DGVDatos.SelectedRows[0];
-                txtNombre.Text =
+
+                txtEdificio.Text =
                         r.Cells["Nombre"].Value.ToString();
 
-                RBEstatus.Checked =
-                    Convert.ToBoolean(r.Cells["Estatus"].Value);
+                txtAula.Text =
+                        r.Cells["Aula"].Value.ToString();
 
-                txtApellidos.Text =
-                    r.Cells["Apellidos"].Value.ToString();
+                cbPiso.SelectedItem =
+                        r.Cells["Piso"].Value.ToString();
+
+                cbCapacidad.SelectedItem =
+                        r.Cells["Capacidad"].Value.ToString();
             }
-        }
-
-        private void TSBSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

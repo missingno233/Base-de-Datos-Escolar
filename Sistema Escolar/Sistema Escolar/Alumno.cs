@@ -191,9 +191,5 @@ namespace Sistema_Escolar
             }
         }
 
-        private void TSBSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }
